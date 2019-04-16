@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmpUpdateManager>
+    <Update>
+        <Host>tetra-defs.amp.cisco.com</Host>
+        <Scheme>https</Scheme>
+        <Port>443</Port>
+    </Update>
+    <Event>
+        <Host>intake.amp.cisco.com</Host>
+        <Scheme>https</Scheme>
+        <Port>443</Port>
+    </Event>
+    <Frequency Interval="1800000000000" Unit="Nanosecond"/>
+    <BusinessGuid>BUSINESS_GUID</BusinessGuid>
+    <UpdateDescriptor>
+        <ManifestFn>
+            <Filename>versions.dat</Filename>
+            <Required>true</Required>
+        </ManifestFn>
+        <ManifestSig>
+            <Filename>versions.sig</Filename>
+            <Required>true</Required>
+        </ManifestSig>
+        <ManifestId>
+            <Filename>versions.id</Filename>
+            <Required>true</Required>
+        </ManifestId>
+        <PatchManifest>
+            <Filename>patches.dat</Filename>
+            <Required>true</Required>
+        </PatchManifest>
+        <VersionRetention>2</VersionRetention>
+        <VersionMetaFiles>
+            <VersionMetaFile filename="patches.dat"/>
+            <VersionMetaFile filename="patches.dat.gz"/>
+            <VersionMetaFile filename="versions.dat"/>
+            <VersionMetaFile filename="versions.id"/>
+            <VersionMetaFile filename="versions.sig"/>
+        </VersionMetaFiles>
+    </UpdateDescriptor>
+</AmpUpdateManager>
