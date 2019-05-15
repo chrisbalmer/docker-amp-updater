@@ -1,0 +1,24 @@
+version: "3"
+services:
+  amp-web:
+    image: nginx:latest
+    depends_on:
+      - amp-updater
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - amp-data:/usr/share/nginx/html
+
+  amp-updater:
+    build: .
+    image: chrisbalmer/amp-updater:0.1
+    environment:
+      BUSINESS_GUID: GUID_HERE
+    restart: always
+    volumes:
+      - amp-data:/usr/share/nginx/html
+
+
+volumes:
+  amp-data:
